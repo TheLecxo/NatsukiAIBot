@@ -1,0 +1,25 @@
+{
+  "started_at": "2026-08-21T13:11:06+03:30",
+  "bot_state": "stopped",
+  "api_traffic": 0,
+  "users": {
+    "7915402928": {
+      "number": 1,
+      "name": "Lͥeͣcͫxo Varten",
+      "username": "TheLecxo",
+      "user_id": "7915402928",
+      "start_chat_time": "2026-08-21T13:11:13+03:30",
+      "usage_count": 2,
+      "last_activity": "2026-08-21T13:21:28+03:30",
+      "last_activity_type": "command"
+    }
+  },
+  "last_event": {
+    "time": "2026-08-21T13:22:23+03:30",
+    "level": "INFO",
+    "action": "shutdown_requested",
+    "detail": "Complete shutdown requested from the main console"
+  },
+  "state_detail": "Complete shutdown finished",
+  "updated_at": "2026-08-21T13:22:23+03:30"
+}

@@ -1,0 +1,15 @@
+User chat history report
+========================================
+Account name: SKPL
+Username: @Lzvmp
+UserId: 7410995370
+Interaction count: 2
+First use date: 2026-08-14T15:38:06.596033
+Last use date: 2026-08-14T15:38:53.359493
+
+[2026-08-14T15:38:49.599672] User: سلام
+
+[2026-08-14T15:38:53.359451] User: هو
+[2026-08-14T15:38:53.949341] @NatsukiAiBot: ببخشید، یه مشکلی پیش اومده...
+[2026-08-14T15:38:54.015234] @NatsukiAiBot: ببخشید، یه مشکلی پیش اومده...
+

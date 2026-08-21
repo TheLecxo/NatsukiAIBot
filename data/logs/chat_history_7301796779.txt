@@ -1,0 +1,12 @@
+User chat history report
+========================================
+Account name: Rose
+Username: @T1r2a3v4lerr
+UserId: 7301796779
+Interaction count: 1
+First use date: 2026-08-21T09:40:14.949271
+Last use date: 2026-08-21T09:45:11.573382
+
+[2026-08-21T09:45:11.573121] User: سلام
+[2026-08-21T09:45:18.332052] @NatsukiAiBot: سلام...! <tg-emoji emoji-id="5237764698245450016">😊</tg-emoji> خوبی؟
+
