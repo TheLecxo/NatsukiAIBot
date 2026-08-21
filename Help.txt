@@ -1,5 +1,5 @@
 natsuki_bot/
-├── .core                           #هسته
+├── core                           #هسته
 │   └── natsuki.chr                     
 ├── .env.example                    # الگوی فایل متغیرهای محیطی
 ├── .gitignore                      # فایل‌های نادیده گرفته شده توسط Git

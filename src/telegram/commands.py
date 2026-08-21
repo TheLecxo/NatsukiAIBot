@@ -126,11 +126,11 @@ async def _get_dashboard_stats(bot):
 
 
 def _is_core_active():
-    return (Path(".core") / "natsuki.chr").exists()
+    return (Path("core") / "natsuki.chr").exists()
 
 
 def _set_core_active(active):
-    core_path = Path(".core") / "natsuki.chr"
+    core_path = Path("core") / "natsuki.chr"
     core_path.parent.mkdir(parents=True, exist_ok=True)
     if active:
         core_path.touch(exist_ok=True)

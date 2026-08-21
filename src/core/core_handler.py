@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 class CoreHandler:
-    def __init__(self, bot, core_path=".core/natsuki.chr"):
+    def __init__(self, bot, core_path="core/natsuki.chr"):
         self.bot = bot
         self.core_path = Path(core_path)
         self.core_path.parent.mkdir(parents=True, exist_ok=True)
