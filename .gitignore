@@ -3,7 +3,4 @@ __pycache__/
 *.pyc
 *.pyo
 data/logs/
-data/*.db
-data/*.session
 data/runtime_status.json
-.core/
