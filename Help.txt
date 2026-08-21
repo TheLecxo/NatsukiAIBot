@@ -1,0 +1,88 @@
+natsuki_bot/
+├── .core                           #هسته
+│   └── natsuki.chr                     
+├── .env.example                    # الگوی فایل متغیرهای محیطی
+├── .gitignore                      # فایل‌های نادیده گرفته شده توسط Git
+├── README.md                       # مستندات پروژه
+├── requirements.txt                # نیازمندی‌های پایتون
+├── main.py                         # نقطه ورود اصلی
+├── config.py                       # تنظیمات اصلی برنامه
+├── run.py                          # اسکریپت اجرا (اختیاری)
+│
+├── data/                           # داده‌های پایدار
+│   ├── natsuki_memory.json        # حافظه بلندمدت
+│   ├── user_data/                 # داده‌های کاربران
+│   │   ├── user1.json
+│   │   └── ...
+│   ├── logs/                      # لاگ‌ها
+│   │   ├── bot.log
+│   │   ├── errors.log
+│   │   └── ...
+│   └── cache/                     # کش موقت
+│
+├── src/                            # سورس کد اصلی
+│   ├── __init__.py
+│   ├── __main__.py                # امکان اجرا با python -m src
+│   │
+│   ├── core/                      # هسته اصلی بات
+│   │   ├── __init__.py
+│   │   └── core_handler.py        # مدیریت .core
+│   │
+│   ├── memory/                    # سیستم حافظه
+│   │   ├── __init__.py
+│   │   ├── long_memory.py         # حافظه بلندمدت
+│   │   ├── short_memory.py        # حافظه کوتاه‌مدت
+│   │   ├── xp_system.py           # سیستم تجربه
+│   │   └── memory_manager.py      # مدیریت یکپارچه حافظه
+│   │
+│   ├── personality/               # شخصیت ناتسوکی
+│   │   ├── __init__.py
+│   │   ├── mood_system.py         # سیستم خلق و خو
+│   │   ├── response_generator.py  # تولید پاسخ
+│   │   ├── special_features.py    # ویژگی‌های خاص
+│   │   ├── dialogue_manager.py    # مدیریت مکالمات
+│   │   └── traits/               # ویژگی‌های شخصیتی
+│   │       ├── __init__.py
+│   │       ├── tsundere.py       # ویژگی تسوندره
+│   │       └── ...
+│   │
+│   ├── telegram/                  # یکپارچه‌سازی تلگرام
+│   │   ├── __init__.py
+│   │   ├── bot_handler.py        # هندلر اصلی
+│   │   ├── commands.py           # دستورات
+│   │   ├── inline_keyboards.py   # کیبوردهای اینلاین
+│   │   ├── message_handler.py    # پردازش پیام‌ها
+│   │   └── webhook.py            # پیکربندی Webhook
+│   │
+│   ├── utils/                     # ابزارهای کمکی
+│   │   ├── __init__.py
+│   │   ├── logger.py             # سیستم لاگینگ
+│   │   ├── error_handler.py      # مدیریت خطاها
+│   │   ├── helpers.py            # توابع کمکی
+│   │   ├── validators.py         # اعتبارسنجی
+│   │   └── decorators.py         # دکوراتورها
+│   │
+│   └── api/                       # یکپارچه‌سازی با APIهای خارجی
+│       ├── __init__.py
+│       ├── weather.py            # API آب و هوا
+│       ├── translate.py          # API ترجمه
+│       └── ...
+│
+├── tests/                         # تست‌های واحد و یکپارچه‌سازی
+│   ├── __init__.py
+│   ├── conftest.py               # تنظیمات pytest
+│   ├── test_memory/
+│   ├── test_personality/
+│   ├── test_telegram/
+│   └── test_utils/
+│
+├── scripts/                       # اسکریپت‌های کمکی
+│   ├── setup.py                  # نصب و راه‌اندازی
+│   ├── backup_data.py           # پشتیبان‌گیری
+│   └── maintenance.py           # نگهداری
+│
+└── docs/                          # مستندات
+    ├── setup_guide.md           # راهنمای نصب
+    ├── api_reference.md         # مرجع API
+    ├── contribution.md          # راهنمای مشارکت
+    └── commands_list.md         # لیست دستورات
