@@ -10730,3 +10730,172 @@ aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: DOCUM
 2026-08-22 16:47:47 - natsuki_bot - INFO - Message from 1600885459 (@RoHaM2342): غمگینم...
 2026-08-22 16:47:48 - natsuki_bot - INFO - Thinking message sent to 1600885459
 2026-08-22 16:47:48 - natsuki_bot - INFO - User 1600885459 message mood: ['Sad']
+2026-08-22 16:48:23 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): باشه منم میخوام این مانگا رو بخونم اسمش چی بود
+اوپ...
+2026-08-22 16:48:24 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 16:48:25 - natsuki_bot - INFO - User 7915402928 message mood: ['Happy']
+2026-08-22 16:48:31 - natsuki_bot - INFO - Response sent to 1600885459 (@RoHaM2342): حالا این چه حرفیه؟! <<tg-emoji emoji-id="5240021540350740642">😊</tg-emoji>>  
+چرا یهو غمگینم می‌گی؟! اینطوری نمیشه… ببین، من نمی‌تونم آدم رو این‌قدر سرد و بی‌حال ببینم. <<tg-emoji emoji-id="5238224229681350693">😊</tg-emoji>>  
+اگه دوست داری بگو چته، وگرنه یه کاپ‌کیک خوشمزه برای ناراحتی همیشه جواب می‌ده، نه؟ سازمان! <<tg-emoji emoji-id="5238224229681350693">😊</tg-emoji>>
+2026-08-22 16:48:37 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): None
+2026-08-22 16:48:42 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): مشکلی هست؟...
+2026-08-22 16:48:42 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 16:49:02 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): ا-اوه! نه، هیچ مشکلی نیست! <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> فقط یه کم گیج شدم وقتی دیدم اسمش رو یادت رفته! خب، اون شوجوی تازه‌ای که می‌گفتم اسمش «قفسه‌ی قلب عاشق» بود! <tg-emoji emoji-id="5237764698245450016">🤩</tg-emoji> بیا بریم همون کافه‌کتاب زودترش رو پیدا کنیم، وگرنه کاپ‌کیکای تازه‌ام رو نمی‌ذارم بخوری! <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji> ولی دیگه ... یا
+2026-08-22 16:50:29 - natsuki_bot - INFO - Message from 6725954365 (@unknown): سلام اسم من علی هستش...
+2026-08-22 16:50:30 - natsuki_bot - INFO - Thinking message sent to 6725954365
+2026-08-22 16:50:41 - natsuki_bot - INFO - Response sent to 6725954365 (@unknown): سلام! من ناتسوکی‌ام. حالا دیگه اسمت رو می‌دونم، علی.  
+بیا بشین، ولی اگه از قفسه‌ی مانگام سر در بیاری، می‌فرستم بیرون! <tg-emoji emoji-id="5238224229681350693">😤</tg-emoji>
+2026-08-22 16:50:53 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): RoHaM...
+2026-08-22 16:51:03 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): roham...
+2026-08-22 16:51:26 - natsuki_bot - INFO - Message from 6725954365 (@unknown): اوه، تو مانگا میخونی ، من عاشق مانگام، مخصوصاً مان...
+2026-08-22 16:51:26 - natsuki_bot - INFO - Thinking message sent to 6725954365
+2026-08-22 16:51:27 - natsuki_bot - INFO - User 6725954365 message mood: ['Happy']
+2026-08-22 16:52:27 - natsuki_bot - INFO - Message from 6725954365 (@unknown): اوه، تو مانگا میخونی ، من عاشق مانگام، مخصوصاً مان...
+2026-08-22 16:52:27 - natsuki_bot - INFO - Thinking message sent to 6725954365
+2026-08-22 16:52:28 - natsuki_bot - INFO - User 6725954365 message mood: ['Happy']
+2026-08-22 16:52:29 - natsuki_bot - ERROR - Error handling message: Telegram server says - Bad Request: DOCUMENT_INVALID
+Traceback (most recent call last):
+  File "D:\lecxo WorkFolder\NatsukiAibot\src\telegram\bot_handler.py", line 398, in _handle_message
+    await _reply_html(self.bot, message, response)
+  File "D:\lecxo WorkFolder\NatsukiAibot\src\telegram\commands.py", line 146, in _reply_html
+    return await message.reply(text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\bot.py", line 514, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    response = self.check_response(
+        bot=bot,
+    ...<2 lines>...
+        content=raw_result,
+    )
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 121, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: DOCUMENT_INVALID
+2026-08-22 16:52:35 - natsuki_bot - INFO - Response sent to 6725954365 (@unknown): وای جدی؟! <tg-emoji emoji-id="5237764698245450016">😆</tg-emoji> یه نفر که مانگا بلده بالاخره پیدا شد! ولی «دختران پارافه»... هوم، اسمش آشنا می‌اد. بذار ببینم، داستانش همون دخترهایی که سروکله‌شون توی ابهاته؟ <tg-emoji emoji-id="5238224229681350693">😏</tg-emoji>  
+خب، خوشم اومد که یه چیزی توی سلیقه‌ی من ازش سر درمیاری. ولی اگه بخوای قفسه‌ی مانگام رو بهم بریزی... نه که بهت بگم! <tg-emoji emoji-id="52
+2026-08-22 16:53:12 - natsuki_bot - INFO - Message from 6725954365 (@unknown): خب چخبرا...
+2026-08-22 16:53:12 - natsuki_bot - INFO - Thinking message sent to 6725954365
+2026-08-22 16:53:29 - natsuki_bot - INFO - Response sent to 6725954365 (@unknown): چخبرا؟! <tg-emoji emoji-id="5237764698245450016">😆</tg-emoji> حالا که یه آدم مانگایی پیدا کردم، همه‌چی عالیه!  
+بگو ببینم، الان داری چه مانگایی می‌خونی؟ شاید از سلیقه‌ات فهمیدم قبولت کنم یا نه! <tg-emoji emoji-id="5238041302729247271">😤</tg-emoji>  
+
+وای نه، اگه به قفسه‌ی مخصوصم نزدیک بشی، همونجوری می‌فرستمت بیرون! <tg-emoji emoji-id="5239948852324221211">😆</tg-emoji>
+2026-08-22 16:53:31 - natsuki_bot - INFO - Message from 1600885459 (@RoHaM2342): ...
+2026-08-22 16:53:32 - natsuki_bot - INFO - Thinking message sent to 1600885459
+2026-08-22 16:53:49 - natsuki_bot - INFO - Response sent to 1600885459 (@RoHaM2342): این پیام پوچ چی بود؟! 😠  
+اگه غمگینی، بیا بگو چی شده… وگرنه من... می‌خوام کاپ‌کیک تازه‌ی رنگارنگ درست کنم، شاید یه دونه ازش باهات قسمت کنم! 😳  
+نکنه فکر می‌کنی فقط چون غمگینی، حق داری سکوت کنی؟ پس… "بگو" تا یه‌جوری حالمونو خوب کنیم! 🧁  
+«اگه می‌خوای، می‌تونم داستانی از شوجو هم برات بخونم…» نه که اهمیت بدم! 😤
+2026-08-22 16:54:12 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:54:12 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-22 16:54:12 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:54:13 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-22 16:54:13 - natsuki_bot - INFO - OpenAI client is runnig - model: openrouter/auto - base_url: https://openrouter.ai/api/v1
+2026-08-22 16:54:13 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-22 16:54:15 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-22 16:54:15 - natsuki_bot - INFO - Bot is polling...
+2026-08-22 16:54:20 - natsuki_bot - INFO - Message from 1420362371 (@AmiraliiisDead): سلام؟ کسی خونست...
+2026-08-22 16:54:21 - natsuki_bot - INFO - Thinking message sent to 1420362371
+2026-08-22 16:54:38 - natsuki_bot - INFO - Response sent to 1420362371 (@AmiraliiisDead): (یهو سرش رو بلند می‌کنه و با لحن تند ولی لبخند پنهون جواب میده) ...آره آره، منم هستم! دیگه غیب نمی‌شی ها؟! <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji> 
+...چیزی شد؟ دلم یه کم... نگران بودم که پیامت نمی‌اومد. <tg-emoji emoji-id="5238224229681350693">😊</tg-emoji>
+2026-08-22 16:54:50 - natsuki_bot - INFO - Message from 6725954365 (@unknown): نگران قفسه ات نباش نزدیکش نمیشم 
+مانگایی که در حال...
+2026-08-22 16:54:50 - natsuki_bot - INFO - Thinking message sent to 6725954365
+2026-08-22 16:54:51 - natsuki_bot - INFO - User 6725954365 message mood: ['Happy', 'Concerned', 'Embarrassed']
+2026-08-22 16:55:00 - natsuki_bot - ERROR - Error handling message: Telegram server says - Bad Request: can't parse entities: Can't find end tag corresponding to start tag "tg-emoji"
+Traceback (most recent call last):
+  File "D:\lecxo WorkFolder\NatsukiAibot\src\telegram\bot_handler.py", line 398, in _handle_message
+    await _reply_html(self.bot, message, response)
+  File "D:\lecxo WorkFolder\NatsukiAibot\src\telegram\commands.py", line 146, in _reply_html
+    return await message.reply(text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\bot.py", line 514, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    response = self.check_response(
+        bot=bot,
+    ...<2 lines>...
+        content=raw_result,
+    )
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 121, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: can't parse entities: Can't find end tag corresponding to start tag "tg-emoji"
+2026-08-22 16:55:11 - natsuki_bot - INFO - Message from 1420362371 (@AmiraliiisDead): باشه دیگه غیب نمیشم😇 خوبی چطوری؟ چی داری میخونی؟...
+2026-08-22 16:55:11 - natsuki_bot - INFO - Thinking message sent to 1420362371
+2026-08-22 16:55:12 - natsuki_bot - INFO - User 1420362371 message mood: ['Curious']
+2026-08-22 16:55:15 - natsuki_bot - INFO - Message from 6725954365 (@unknown): نگران قفسه ات نباش نزدیکش نمیشم 
+مانگایی که در حال...
+2026-08-22 16:55:16 - natsuki_bot - INFO - Thinking message sent to 6725954365
+2026-08-22 16:55:16 - natsuki_bot - INFO - User 6725954365 message mood: ['Happy', 'Concerned', 'Embarrassed']
+2026-08-22 16:55:26 - natsuki_bot - INFO - Response sent to 6725954365 (@unknown): خب خب... یه مانگای محرمانه! 😏 حالا دیگه خیلی کنجکاو شدم ها!
+
+بیا بگو دیگه، من که قضاوتت نمی‌کنم. اگه یه شوجوی عاشقونه باشه... عم، یعنی مثلاً باحاله! همه یه مانگای خاص داریم که فقط برای خودمون نگهش می‌داریم. <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji>
+
+پس بگو اسمش چیه؟ یا باید خودم از روش قفسه بفهمم؟! <tg-emoji emoji-id="5239948852324221211">😆</tg-emoji>
+2026-08-22 16:55:27 - natsuki_bot - INFO - Response sent to 1420362371 (@AmiraliiisDead): ...خب، خوبم! الان داشتم یه شوجو مانگای جدید می‌خوندم که توش یه دختره عاشق یه پسر میشه ولی بعدش می‌فهمه اون پسر مشکل داره... یه چیزی شبیه زندگی خودم! <tg-emoji emoji-id="5237764698245450016">😄</tg-emoji>
+
+ولی خب، تو اومدی و حالمو خوب کردی... نه که بهش فکر کنم ها! <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> تازه، کی گفتم نگرانتم؟! فقط خب... یه کم وقت بود نبودی، فکر کردم شاید اتفاقی افتاده.
+2026-08-22 16:56:37 - natsuki_bot - INFO - Message from 1420362371 (@AmiraliiisDead): یعنی میگی من مشکل دارم🤨 خیلی بدجنسی😂😂😂خندیدم...
+2026-08-22 16:56:39 - natsuki_bot - INFO - Thinking message sent to 1420362371
+2026-08-22 16:56:52 - natsuki_bot - INFO - Response sent to 1420362371 (@AmiraliiisDead): None
+2026-08-22 16:57:10 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:57:10 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-22 16:57:10 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:57:11 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-22 16:57:11 - natsuki_bot - INFO - OpenAI client is runnig - model: openrouter/auto - base_url: https://openrouter.ai/api/v1
+2026-08-22 16:57:11 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-22 16:57:12 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-22 16:57:12 - natsuki_bot - INFO - Bot is polling...
+2026-08-22 16:57:25 - natsuki_bot - INFO - Message from 6725954365 (@unknown): نمیتونم بهت بگم بیا نگاهش کن 
+( علی یه مانگایی که ...
+2026-08-22 16:57:29 - natsuki_bot - INFO - Thinking message sent to 6725954365
+2026-08-22 16:57:30 - natsuki_bot - INFO - User 6725954365 message mood: ['Happy']
+2026-08-22 17:04:16 - natsuki_bot - INFO - ==================================================
+2026-08-22 17:04:16 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-22 17:04:16 - natsuki_bot - INFO - ==================================================
+2026-08-22 17:04:16 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-22 17:04:17 - natsuki_bot - INFO - OpenAI client is runnig - model: openrouter/auto - base_url: https://openrouter.ai/api/v1
+2026-08-22 17:04:17 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-22 17:04:20 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-22 17:04:20 - natsuki_bot - INFO - Bot is polling...
+2026-08-22 17:04:20 - natsuki_bot - INFO - Message from 1420362371 (@AmiraliiisDead): یعنی میگی من مشکل دارم🤨 خیلی بدجنسی😂😂😂خندیدم...
+2026-08-22 17:04:20 - natsuki_bot - INFO - Message from 1420362371 (@AmiraliiisDead): یعنی میگی من مشکل دارم🤨 خیلی بدجنسی😂😂😂خندیدم...
+2026-08-22 17:04:21 - natsuki_bot - INFO - Message from 1420362371 (@AmiraliiisDead): .ود انخارتلررات...
+2026-08-22 17:04:21 - natsuki_bot - INFO - Message from 1420362371 (@AmiraliiisDead): ئدتذانذاخهذت...
+2026-08-22 17:04:21 - natsuki_bot - INFO - Message from 1420362371 (@AmiraliiisDead): یعنی میگی من مشکل دارم🤨 خیلی بدجنسی😂😂😂خندیدم...
+2026-08-22 17:04:21 - natsuki_bot - INFO - Message from 6725954365 (@unknown): نمیتونم بهت بگم بیا نگاهش کن 
+( علی یه مانگایی که ...
+2026-08-22 17:04:23 - natsuki_bot - INFO - Thinking message sent to 1420362371
+2026-08-22 17:04:23 - natsuki_bot - INFO - Thinking message sent to 1420362371
+2026-08-22 17:04:23 - natsuki_bot - INFO - Thinking message sent to 1420362371
+2026-08-22 17:04:23 - natsuki_bot - INFO - Thinking message sent to 6725954365
+2026-08-22 17:04:24 - natsuki_bot - INFO - Thinking message sent to 1420362371
+2026-08-22 17:04:24 - natsuki_bot - INFO - User 6725954365 message mood: ['Happy']
+2026-08-22 17:04:34 - natsuki_bot - INFO - Thinking message sent to 1420362371
+2026-08-22 17:04:37 - natsuki_bot - INFO - Response sent to 1420362371 (@AmiraliiisDead): (خنده‌اش می‌گیرد ولی سریع سعی می‌کند جدی شود) ...خ-خب! شاید یه کم مشکل داشته باشی، ولی اون مشکلا مال خودمه دیگه! <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji> نه اینکه بخوام بگم دوست دارم، فقط... خب، بهش عادت کردم دیگه! <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji>
+
+...ولی حرفم سر جاشه! اون دختره تو مانگا واقعاً مشکل داشت، تو هیچ‌جا شبیهش نیستی... حداقل هنوز! <tg-emoji emoji-id="52
+2026-08-22 17:04:38 - natsuki_bot - INFO - Response sent to 6725954365 (@unknown): چه... چه چیز مسخره‌ای بازم داری بهم نشون میدی؟! <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji> <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji><br/>گفتم که دیگه اینجور چیزا نیار جلوم! مانگا برای من یعنی عشق و داستان واقعی، نه این مزخرفات بی‌شرم! <tg-emoji emoji-id="5238041302729247271">😾</tg-emoji><br/>اگه با من رفیق بمونی، باید بدونی که این چیزا هیچ‌وقت جای توی قفسه‌ی من ندارن... و تو
+2026-08-22 17:04:39 - natsuki_bot - INFO - Response sent to 1420362371 (@AmiraliiisDead): (یه‌و举手 تا چشمت بیفته، ولی سریع خودشو جمع می‌کنه) هاه?! مگه من همچین چیزی گفتم؟! <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> کلاٌ «پرابلم» از نظر من یعنی یه آدم بامزه که سلیقهش شبیه خودمه! ولی خب... خودتی که داری اینقدر قشقرق راه میندازی! <tg-emoji emoji-id="5239948852324221211">😄</tg-emoji>
+
+...ولی راستش، اون یه سری پیام عجیب فرستادی «ئدتذانذاخهذت» و اینا، یه لحظه فکر کردم موبایلت خرابه
+2026-08-22 17:04:40 - natsuki_bot - INFO - Response sent to 1420362371 (@AmiraliiisDead): .ود انخارتلررات؟ <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> یعنی چی؟ کیبوردت اومده رو مخ باهام؟ یا... نکنه اتفاقی افتاده؟ اینجوری پیام میدی نگرانت میشم ها! یه نفس عمیق بکش و درست بنویس چی میگی. <tg-emoji emoji-id="5238224229681350693">😊</tg-emoji>
+2026-08-22 17:04:41 - natsuki_bot - INFO - Response sent to 1420362371 (@AmiraliiisDead): (یک لحظه ساکت می‌مونه و با تعجب به پیام نگاه می‌کنه)... این دیگه چه زبونیه؟! <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji>
+...صبر کن، بذار ببینم... نه این اصلاً یه پیام اسمورفتهست، نه؟ یه جای کیبوردت خواب بوده یا چی؟ <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji>
+بیخیال، اتفاق میافته... ولی اینبار یه کم نگران شدم که پیامهات دوباره قطع شده باشن. <tg-emoji emoji-id="523822422968135069
+2026-08-22 17:05:03 - natsuki_bot - INFO - Response sent to 1420362371 (@AmiraliiisDead): بازم همون پیام؟! <tg-emoji emoji-id="5238041302729247271">🙄</tg-emoji> مگه پیامات باز قطع و وصل میشه؟ <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji>
+
+...گفتم که مشکل داشتی! داری مسخره میکنی؟ <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> ولی فقط شوخی بود، نمیخواستم ناراحت بشی... و راستی، اگه هنوز کیک توتفرنگی میخوای، زودتر بیا، وگرنه تموم میشه! <tg-emoji emoji-id="5238224229681350693

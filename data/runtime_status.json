@@ -1,49 +1,7 @@
 {
-  "started_at": "2026-08-22T16:46:38+03:30",
-  "bot_state": "running",
-  "api_traffic": 3,
-  "users": {
-    "7915402928": {
-      "number": 1,
-      "name": "Lͥeͣcͫxo Varten",
-      "username": "TheLecxo",
-      "user_id": "7915402928",
-      "start_chat_time": "2026-08-22T16:46:49+03:30",
-      "usage_count": 4,
-      "last_activity": "2026-08-22T16:48:42+03:30",
-      "last_activity_type": "message",
-      "current_mood": "Happy",
-      "mood_updated_at": "2026-08-22T16:48:44+03:30"
-    },
-    "1600885459": {
-      "number": 2,
-      "name": "RoHaM",
-      "username": "RoHaM2342",
-      "user_id": "1600885459",
-      "start_chat_time": "2026-08-22T16:47:26+03:30",
-      "usage_count": 2,
-      "last_activity": "2026-08-22T16:47:47+03:30",
-      "last_activity_type": "message",
-      "current_mood": "Defensive",
-      "mood_updated_at": "2026-08-22T16:47:49+03:30"
-    },
-    "6725954365": {
-      "number": 3,
-      "name": "Ali Soltani",
-      "username": "unknown",
-      "user_id": "6725954365",
-      "start_chat_time": "2026-08-22T16:49:01+03:30",
-      "usage_count": 1,
-      "last_activity": "2026-08-22T16:49:01+03:30",
-      "last_activity_type": "command"
-    }
-  },
-  "last_event": {
-    "time": "2026-08-22T16:46:53+03:30",
-    "level": "INFO",
-    "action": "control_action",
-    "detail": "open_user_search requested by Lͥeͣcͫxo Varten (7915402928)"
-  },
-  "state_detail": "Polling as @NatsukiAiBot",
-  "updated_at": "2026-08-22T16:49:01+03:30"
+  "started_at": "2026-08-22T17:06:14+03:30",
+  "bot_state": "starting",
+  "api_traffic": 0,
+  "users": {},
+  "last_event": null
 }

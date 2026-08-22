@@ -8,6 +8,7 @@ import asyncio
 import queue
 import threading
 import os
+import time
 
 try:
     import msvcrt
@@ -27,6 +28,7 @@ from src.utils.runtime_monitor import (
     initialize_runtime,
     set_bot_state,
     record_event,
+    is_shutdown_requested,
     start_dashboards,
     stop_dashboards,
 )
@@ -42,8 +44,14 @@ def _read_console_commands(command_queue, ready_event):
     while True:
         try:
             if msvcrt is not None:
-                command = msvcrt.getwch().lower()
-                print(command, flush=True)
+                if is_shutdown_requested():
+                    command = "y"
+                elif msvcrt.kbhit():
+                    command = msvcrt.getwch().lower()
+                    print(command, flush=True)
+                else:
+                    time.sleep(0.2)
+                    continue
             else:
                 command = input().strip().lower()
         except (EOFError, KeyboardInterrupt):

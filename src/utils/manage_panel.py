@@ -3,7 +3,7 @@ import subprocess
 import sys
 import tkinter as tk
 
-from src.utils.runtime_monitor import BASE_DIR
+from src.utils.runtime_monitor import BASE_DIR, request_shutdown
 
 
 DASHBOARDS = (
@@ -69,9 +69,29 @@ class ManagePanel:
             )
             button.grid(row=index // 2, column=index % 2, sticky="nsew", padx=6, pady=6)
 
+        shutdown_button = tk.Button(
+            grid,
+            text="Shut down",
+            command=self.shutdown,
+            bg="#713b45",
+            fg="#ffffff",
+            activebackground="#9d4f5b",
+            activeforeground="#ffffff",
+            relief="flat",
+            bd=0,
+            highlightthickness=1,
+            highlightbackground="#c87984",
+            highlightcolor="#ffd5da",
+            font=("Segoe UI", 11, "bold"),
+            cursor="hand2",
+            padx=12,
+            pady=16,
+        )
+        shutdown_button.grid(row=2, column=0, columnspan=2, sticky="nsew", padx=6, pady=6)
+
         for column in range(2):
             grid.columnconfigure(column, weight=1)
-        for row in range(2):
+        for row in range(3):
             grid.rowconfigure(row, weight=1)
 
     def open_dashboard(self, view, title):
@@ -88,6 +108,18 @@ class ManagePanel:
             env=environment,
         )
         self.processes.append(process)
+
+    def shutdown(self):
+        request_shutdown()
+        main_pid = os.getenv("NATSUKI_MAIN_PID")
+        self.close()
+        if main_pid and main_pid.isdigit():
+            subprocess.Popen(
+                ["taskkill", "/F", "/T", "/PID", main_pid],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                creationflags=subprocess.CREATE_NO_WINDOW,
+            )
 
     def close(self):
         for process in self.processes:

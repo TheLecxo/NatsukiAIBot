@@ -12,6 +12,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parents[2]
 STATUS_PATH = BASE_DIR / "data" / "runtime_status.json"
 EVENTS_PATH = BASE_DIR / "data" / "runtime_events.jsonl"
+SHUTDOWN_REQUEST_PATH = BASE_DIR / "data" / "shutdown.request"
 
 _lock = threading.RLock()
 _dashboard_processes = []
@@ -65,12 +66,18 @@ def initialize_runtime():
         _write_status(_default_status())
         EVENTS_PATH.parent.mkdir(parents=True, exist_ok=True)
         EVENTS_PATH.write_text("", encoding="utf-8")
+        SHUTDOWN_REQUEST_PATH.unlink(missing_ok=True)
 
 
 def request_shutdown():
     """Mark a clean shutdown request for the dashboards and logs."""
     set_bot_state("stopping", "Shutdown requested from the main console")
     record_event("shutdown_requested", "The operator requested a complete shutdown")
+    SHUTDOWN_REQUEST_PATH.write_text("shutdown", encoding="ascii")
+
+
+def is_shutdown_requested():
+    return SHUTDOWN_REQUEST_PATH.exists()
 
 
 def set_bot_state(state, detail=None):
@@ -165,7 +172,11 @@ def start_dashboards():
         [sys.executable, "-m", "src.utils.manage_panel"],
         cwd=str(BASE_DIR),
         creationflags=subprocess.CREATE_NEW_CONSOLE,
-        env={**os.environ, "NATSUKI_CONSOLE_TITLE": "Natsuki - Manage"},
+        env={
+            **os.environ,
+            "NATSUKI_CONSOLE_TITLE": "Natsuki - Manage",
+            "NATSUKI_MAIN_PID": str(os.getpid()),
+        },
     )
     _dashboard_processes.append(process)
     return list(_dashboard_processes)
