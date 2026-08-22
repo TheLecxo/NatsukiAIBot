@@ -104,7 +104,7 @@ def render_events(status, events):
     print("NATSUKI | BOT EVENTS")
     print(f"State: {status.get('bot_state', 'Unknown')} | Last update: {status.get('updated_at', 'Unknown')}")
     print("-" * 110)
-    for event in events[-25:]:
+    for event in events:
         print(f"[{event.get('time')}] {event.get('level')} | {event.get('action')} | {event.get('detail')}")
     if not events:
         print("No events recorded yet.")
@@ -114,7 +114,7 @@ def render_errors(status, events):
     print(f"State: {status.get('bot_state', 'Unknown')} | Last update: {status.get('updated_at', 'Unknown')}")
     print("-" * 110)
     errors = [event for event in events if str(event.get("level", "")).upper() == "ERROR"]
-    for event in errors[-50:]:
+    for event in errors:
         print(f"[{event.get('time')}] {event.get('action')} | {event.get('detail')}")
     if not errors:
         print("No errors recorded yet.")
@@ -185,6 +185,9 @@ def main():
         else:
             render_events(status, events)
         print("\nRefreshing every 2 seconds. Close this window to stop this dashboard.")
+        if status.get("bot_state") in {"stopped", "error"}:
+            print("Runtime finished. This dashboard will close.")
+            break
         time.sleep(2)
 
 

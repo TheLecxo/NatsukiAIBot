@@ -151,7 +151,7 @@ def read_runtime_files():
                 json.loads(line)
                 for line in EVENTS_PATH.read_text(encoding="utf-8").splitlines()
                 if line.strip()
-            ][-200:]
+            ]
         except (OSError, json.JSONDecodeError):
             events = []
         return status, events
@@ -161,24 +161,26 @@ def start_dashboards():
     if sys.platform != "win32":
         return []
 
-    for view, title in (
-        ("users", "Natsuki - Active Users"),
-        ("events", "Natsuki - Bot Events"),
-        ("errors", "Natsuki - Errors"),
-        ("health", "Natsuki - Service Health"),
-    ):
-        process = subprocess.Popen(
-            [sys.executable, "-m", "src.utils.console_dashboard", view],
-            cwd=str(BASE_DIR),
-            creationflags=subprocess.CREATE_NEW_CONSOLE,
-            env={**os.environ, "NATSUKI_CONSOLE_TITLE": title},
-        )
-        _dashboard_processes.append(process)
+    process = subprocess.Popen(
+        [sys.executable, "-m", "src.utils.manage_panel"],
+        cwd=str(BASE_DIR),
+        creationflags=subprocess.CREATE_NEW_CONSOLE,
+        env={**os.environ, "NATSUKI_CONSOLE_TITLE": "Natsuki - Manage"},
+    )
+    _dashboard_processes.append(process)
     return list(_dashboard_processes)
 
 
 def stop_dashboards():
     for process in _dashboard_processes:
         if process.poll() is None:
-            process.terminate()
+            if sys.platform == "win32":
+                subprocess.run(
+                    ["taskkill", "/F", "/T", "/PID", str(process.pid)],
+                    check=False,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                )
+            else:
+                process.terminate()
     _dashboard_processes.clear()

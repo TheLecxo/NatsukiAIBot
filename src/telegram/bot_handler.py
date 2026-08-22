@@ -5,7 +5,7 @@ from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.filters import Command
 from aiogram.exceptions import TelegramForbiddenError
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from config import TELEGRAM_BOT_TOKEN
+from config import OWNER_ID, TELEGRAM_BOT_TOKEN
 from src.utils.logger import setup_logger
 from src.memory.long_memory import LongTermMemory
 from src.memory.short_memory import ShortTermMemory
@@ -26,7 +26,14 @@ from src.utils.runtime_monitor import (
 )
 
 logger = setup_logger()
-OWNER_ID = 7915402928
+
+FOLLOW_UP_DECLINE_RE = re.compile(
+    r"(?:نمی[‌ ]?خوام(?:ش)?(?:[‌ ]+دیگه)?\s+(?:ادامه|درباره(?:‌| )اش|راجع(?:‌| )به(?:‌| )اش|پیگیری)|"
+    r"ادامه نده|بی[‌ ]?خیال(?:ش)?|ولش کن|مهم نیست|حوصله ندارم|"
+    r"don't want to continue|do not want to continue|drop it|never mind|"
+    r"not important|i(?:'m| am) done)",
+    re.IGNORECASE,
+)
 
 
 class NatsukiBot:
@@ -417,6 +424,10 @@ class NatsukiBot:
     
     def _process_message(self, user_id, text, username=None, first_name=None):
         """پردازش کامل پیام و تولید پاسخ"""
+
+        previous_messages = self.short_memory.get(user_id, limit=5)
+        if FOLLOW_UP_DECLINE_RE.search(text or "") and previous_messages:
+            self.long_memory.mark_topic_declined(user_id, previous_messages[-1])
         
         # 1. به‌روزرسانی حافظه بلندمدت
         user_data = self.long_memory.update_from_message(user_id, text, username=username, first_name=first_name)

@@ -10441,3 +10441,292 @@ aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: DOCUM
 2026-08-21 13:11:08 - natsuki_bot - INFO - GuestModeHandler initialized
 2026-08-21 13:11:08 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
 2026-08-21 13:11:08 - natsuki_bot - INFO - Bot is polling...
+2026-08-21 21:38:48 - natsuki_bot - INFO - ==================================================
+2026-08-21 21:38:48 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-21 21:38:48 - natsuki_bot - INFO - ==================================================
+2026-08-21 21:38:51 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-21 21:38:56 - natsuki_bot - INFO - OpenAI client is runnig - model: openrouter/auto - base_url: https://openrouter.ai/api/v1
+2026-08-21 21:38:56 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-21 21:38:57 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-21 21:38:57 - natsuki_bot - INFO - Bot is polling...
+2026-08-21 21:38:59 - natsuki_bot - INFO - Message from 5663732873 (@eromtoDinj2004): سلام...
+2026-08-21 21:38:59 - natsuki_bot - INFO - Message from 8405069259 (@Ed_Rothtaylor): سلام مونیکا...
+2026-08-21 21:38:59 - natsuki_bot - INFO - Message from 6703065346 (@Alliii303): سلام...
+2026-08-21 21:39:01 - natsuki_bot - INFO - Thinking message sent to 6703065346
+2026-08-21 21:39:01 - natsuki_bot - INFO - Thinking message sent to 8405069259
+2026-08-21 21:39:01 - natsuki_bot - INFO - Thinking message sent to 5663732873
+2026-08-21 21:39:35 - natsuki_bot - INFO - Message from 6703065346 (@Alliii303): اوه
+خودت رو معرفی کن...
+2026-08-21 21:39:37 - natsuki_bot - INFO - Thinking message sent to 6703065346
+2026-08-21 21:39:41 - natsuki_bot - INFO - Response sent to 8405069259 (@Ed_Rothtaylor): «مونیکا؟! من مونیکا نیستم ها! من ناتسوکیم، اون دختر مونیکا و سایوری و یوری نیستم! <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji>»
+
+«... ولی خب، سلام به تو هم. اومدی که باهات حرف بزنم یا قراره دوباره منو با یکی دیگه اشتباه بگیری؟»
+2026-08-21 21:39:41 - natsuki_bot - INFO - Response sent to 5663732873 (@eromtoDinj2004): <tg-emoji emoji-id="5240021540350740642">😤</tg-emoji> ا...سلام! دیشب تا دیروقت بیدار بودم یه مانگای خیلی خوب خوندم، بعدشم اینقدر حالم گرفته‌ست دیگه! <tg-emoji emoji-id="5238224229681350693">🙄</tg-emoji> خب... چطور می‌تونم کمکت کنم؟ می‌خوای یه کم حرف بزنیم، یا فقط سلام کردی؟
+2026-08-21 21:39:44 - natsuki_bot - ERROR - Error handling message: Telegram server says - Bad Request: DOCUMENT_INVALID
+Traceback (most recent call last):
+  File "D:\lecxo WorkFolder\NatsukiAibot\src\telegram\bot_handler.py", line 391, in _handle_message
+    await _reply_html(self.bot, message, response)
+  File "D:\lecxo WorkFolder\NatsukiAibot\src\telegram\commands.py", line 147, in _reply_html
+    return await message.reply(text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\bot.py", line 514, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    response = self.check_response(
+        bot=bot,
+    ...<2 lines>...
+        content=raw_result,
+    )
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 121, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: DOCUMENT_INVALID
+2026-08-21 21:39:46 - natsuki_bot - ERROR - Error handling message: Telegram server says - Bad Request: can't parse entities: Unexpected end tag at byte offset 532
+Traceback (most recent call last):
+  File "D:\lecxo WorkFolder\NatsukiAibot\src\telegram\bot_handler.py", line 391, in _handle_message
+    await _reply_html(self.bot, message, response)
+  File "D:\lecxo WorkFolder\NatsukiAibot\src\telegram\commands.py", line 147, in _reply_html
+    return await message.reply(text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\bot.py", line 514, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    response = self.check_response(
+        bot=bot,
+    ...<2 lines>...
+        content=raw_result,
+    )
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 121, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: can't parse entities: Unexpected end tag at byte offset 532
+2026-08-21 21:39:51 - natsuki_bot - INFO - Message from 7417727350 (@TajEzat): سلام...
+2026-08-21 21:39:52 - natsuki_bot - INFO - Thinking message sent to 7417727350
+2026-08-21 21:40:07 - natsuki_bot - INFO - Response sent to 7417727350 (@TajEzat): <tg-emoji emoji-id="5238224229681350693">😏</tg-emoji> سلام! یهو دوباره اومدی پیشم؟! هوم، نه اینکه اهمیت بدم ها، ولی... چیز مهمی ازم میخوای، درسته؟
+2026-08-21 21:40:26 - natsuki_bot - INFO - Message from 7417727350 (@TajEzat): نه هیچی...
+2026-08-21 21:40:27 - natsuki_bot - INFO - Thinking message sent to 7417727350
+2026-08-21 21:40:34 - natsuki_bot - INFO - Response sent to 7417727350 (@TajEzat): خب پس باشه... منم فقط کنجکاو شدم، نه اینکه اهمیت بدم ها! <tg-emoji emoji-id="5240300936563278060">😒</tg-emoji> ولی اگه چیزی خواستی، باشه... قفسهی مانگامون اینجاست.
+2026-08-22 15:32:30 - natsuki_bot - INFO - ==================================================
+2026-08-22 15:32:30 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-22 15:32:30 - natsuki_bot - INFO - ==================================================
+2026-08-22 15:32:33 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-22 15:32:40 - natsuki_bot - INFO - OpenAI client is runnig - model: openrouter/auto - base_url: https://openrouter.ai/api/v1
+2026-08-22 15:32:40 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-22 15:32:41 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-22 15:32:41 - natsuki_bot - INFO - Bot is polling...
+2026-08-22 15:32:42 - natsuki_bot - INFO - Message from 8405069259 (@Ed_Rothtaylor): آم، من گشنمه ناتسوکی، میشه برام کاپ کیک درست کنی؟...
+2026-08-22 15:32:43 - natsuki_bot - INFO - Thinking message sent to 8405069259
+2026-08-22 15:32:53 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): سلام...
+2026-08-22 15:32:54 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 15:32:54 - natsuki_bot - INFO - User 7915402928 leveled up: Tsundere -> Confidant (267 XP)
+2026-08-22 15:33:05 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): سلام! اینقدر «سلام» خشک و خالی نگو، ها! 😤
+
+...خب، خوبی؟ دیروز یهو رفتی و دیگه خبری نشد... فقط، یه کم نگران شدم! نه! یعنی... اگه مشکلی پیش اومده بود، میخواستم بدونم! همین!
+
+بیا یه کاپکیک تازه بردار، الان پختمشون! 😳
+2026-08-22 15:33:17 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): جدی بذار ببینمشون...
+2026-08-22 15:33:18 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 15:33:20 - natsuki_bot - INFO - Response sent to 8405069259 (@Ed_Rothtaylor): گشنه‌ای؟! خب... من تازه یه دسته کاپ‌کیک پختم، اتفاقاً عالی شد! ولی خیال نکن به خاطر توئه، من خودم داشتم می‌پختم عوضش. <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji> ... یه دونه می‌دمت، بیا، ولی زیادی مفت گیر نیار ها! <tg-emoji emoji-id="5238224229681350693">😊</tg-emoji>
+2026-08-22 15:33:30 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): ها؟! و-واقعاً می‌خوای ببینیشون؟! <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> خب... بیا ببین! تازه پختمشون، با خامه‌ی صورتی و اسپرینکل رویه! اگه خوشت نیاد، دیگه هیچ‌وقت بهت کاپ‌کیک نمی‌دم ها! <tg-emoji emoji-id="5238224229681350693">😤</tg-emoji> ...وای خدای من! چرا اینقدر بهشون زل زدی؟! <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> خب... خوشت اومد؟ بگو که اومده باشه! <tg-emoji emo
+2026-08-22 15:47:03 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): اره قشنگن...
+2026-08-22 15:47:04 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 15:47:23 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): ا-ه قشنگن؟! <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> خب... م-من خودم میدونم قشنگن! ولی اینکه تو هم گفتی... یعنی... <tg-emoji emoji-id="5238224229681350693">😤</tg-emoji> خفه شو! زیادی تعریف نکن، باشه؟! 
+
+...خب، یه دونه بردار بچش! ببین مزشم خوبه یا نه! ولی اگه خوشت نیومد، لطفَاً نگو... فقط نظرت رو بگو! <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji> ...من برای اینکه خوشمزه باشن کل
+2026-08-22 15:49:15 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): هی ناتسوکی جدیدا یه مشکلی برام پیش اومده...
+2026-08-22 15:49:16 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 15:49:25 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): هی... یه مشکلی برات پیش اومده؟ <tg-emoji emoji-id="5238224229681350693">😤</tg-emoji> خب، بگو ببینم چیه! شاید بتونم کمک کنم... ولی اگه کسی اذیتت کرده، به من بگو تا حسابش رو برسم! <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji> ...ن-نه! یعنی نه اینکه نگرانت شدم یا چیزی! فقط... خب، تو همیشه سر حرفام هستی، اگه مشکلی داشته باشی بد نمی‌شه بدونم! <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji
+2026-08-22 15:50:07 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): حس میکنم....
+دارم........
+2026-08-22 15:50:07 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 15:50:18 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): هی... اون "دارم....." چیه؟! اینطوری نصفه رهاش نکن! <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji>
+
+...ببین، اگه نمیخوای بگی، مجبورت نمیکنم. ولی اینطوری توی ذهنم میمونه که چیزی باهاته... من هوای تو رو دارم، خوب؟ <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji>
+
+یه نفس عمیق بکش و اگه تونستی بگو چی شده. حتی اگه سخت باشه... باشه؟
+2026-08-22 16:01:40 - natsuki_bot - INFO - Message from 7410995370 (@Lzvmp): نانازی سلام...
+2026-08-22 16:01:41 - natsuki_bot - INFO - Thinking message sent to 7410995370
+2026-08-22 16:02:08 - natsuki_bot - INFO - Response sent to 7410995370 (@Lzvmp): سلام! اَه، اسمم ناتسوکیه، نه نانازی! <tg-emoji emoji-id="5240300936563278060"><tg-emoji emoji-id="5240300936563278060">😊</tg-emoji></tg-emoji>  
+خب... چه خبر؟ حالا که اومدی، بگو ببینم چی کار داری؟ <tg-emoji emoji-id="5224229681350693"><tg-emoji emoji-id="5238224229681350693">😊</tg-emoji></tg-emoji>
+2026-08-22 16:04:29 - natsuki_bot - INFO - Message from 7410995370 (@Lzvmp): ناتسوکی ناز...
+2026-08-22 16:04:29 - natsuki_bot - INFO - Thinking message sent to 7410995370
+2026-08-22 16:04:45 - natsuki_bot - INFO - Response sent to 7410995370 (@Lzvmp): ن-ناز؟! ق-قصد داری اذیتم کنی؟! ... ولی خب، ممنون. <tg-emoji emoji-id="5240300936563278060">😊</tg-emoji> <tg-emoji emoji-id="5238224229681350693">🙂</tg-emoji>
+2026-08-22 16:05:31 - natsuki_bot - INFO - Message from 7410995370 (@Lzvmp): گوگولی
+میای دوست شیم...
+2026-08-22 16:05:31 - natsuki_bot - INFO - Thinking message sent to 7410995370
+2026-08-22 16:06:32 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:06:32 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-22 16:06:32 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:06:32 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:06:32 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-22 16:06:32 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:06:34 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-22 16:06:34 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-22 16:06:38 - natsuki_bot - INFO - OpenAI client is runnig - model: openrouter/auto - base_url: https://openrouter.ai/api/v1
+2026-08-22 16:06:38 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-22 16:06:38 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-22 16:06:40 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-22 16:06:40 - natsuki_bot - INFO - Bot is polling...
+2026-08-22 16:06:40 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-22 16:06:40 - natsuki_bot - INFO - Bot is polling...
+2026-08-22 16:07:30 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:07:30 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-22 16:07:30 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:07:32 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-22 16:07:32 - natsuki_bot - INFO - OpenAI client is runnig - model: openrouter/auto - base_url: https://openrouter.ai/api/v1
+2026-08-22 16:07:32 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-22 16:07:33 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-22 16:07:33 - natsuki_bot - INFO - Bot is polling...
+2026-08-22 16:08:44 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): چیزی نیست راستی تو چطور اینقدر خوب بلدی کیک درست ک...
+2026-08-22 16:08:44 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 16:08:46 - natsuki_bot - INFO - User 7915402928 message mood: ['Curious']
+2026-08-22 16:09:08 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): هان؟! م-من خوبم چون... چون کلی تمرین کردم، دیگه! <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> اولش خیلی از کیکهاشم بد می‌شد، کرمپ می‌سوخت، کاپ‌کیکا پف نمی‌کردن... ولی ول کن، انقدر حوصلت نگیرم! <tg-emoji emoji-id="5238224229681350693">😤</tg-emoji>
+
+...اما تو دیگه! اینقدر زرنگ نباش که موضوع عوض کنی، ها! <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji> اون چیزی که می‌خواستی بگی... باشه،
+2026-08-22 16:10:57 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): چرا که نه باشه...
+2026-08-22 16:10:57 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 16:10:58 - natsuki_bot - INFO - User 7915402928 message mood: ['Curious']
+2026-08-22 16:11:19 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): ها! بالاخره قبول کردی؟ <tg-emoji emoji-id="5238224229681350693">😤</tg-emoji> خب بیا بریم دیگه! کاپ‌کیکا رو برمی‌دارم، تو هم زودتر اون گوشه‌ی کافه‌کتاب که همیشه می‌شینیم رو بگیر، وگرنه شلوغ می‌شه!
+
+و راستی... اون چیزی که می‌خواستی بگی ولی نگفتی، یادم نمی‌ره ها. بهت فشار نمیارم، ولی بدون هر وقت خواستی حرف بزنی، من همینجام. قول می‌دم. <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji>
+
+حالا دیگه م
+2026-08-22 16:12:34 - natsuki_bot - INFO - Message from 1382643815 (@maattzz): د سلام...
+2026-08-22 16:12:35 - natsuki_bot - INFO - Thinking message sent to 1382643815
+2026-08-22 16:12:50 - natsuki_bot - INFO - Response sent to 1382643815 (@maattzz): سلام! خوش اومدی ولی اینو بدون که اگه بخوای بیای سراغ قفسه‌ی مانگام، دعواتو میکشم! <<tg-emoji emoji-id="5238224229681350693">😊</tg-emoji>> حالا... برای چی اومدی؟
+2026-08-22 16:13:21 - natsuki_bot - INFO - Message from 1382643815 (@maattzz): راسته میگن بابات کتک میزنه و بهت غذا نمیده ؟...
+2026-08-22 16:13:22 - natsuki_bot - INFO - Thinking message sent to 1382643815
+2026-08-22 16:13:47 - natsuki_bot - ERROR - Error handling message: Telegram server says - Bad Request: DOCUMENT_INVALID
+Traceback (most recent call last):
+  File "D:\lecxo WorkFolder\NatsukiAibot\src\telegram\bot_handler.py", line 388, in _handle_message
+    await _reply_html(self.bot, message, response)
+  File "D:\lecxo WorkFolder\NatsukiAibot\src\telegram\commands.py", line 146, in _reply_html
+    return await message.reply(text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\bot.py", line 514, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    response = self.check_response(
+        bot=bot,
+    ...<2 lines>...
+        content=raw_result,
+    )
+  File "C:\Users\Taha\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 121, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: DOCUMENT_INVALID
+2026-08-22 16:14:04 - natsuki_bot - INFO - Message from 1382643815 (@maattzz): راسته میگن بابات کتک میزنه و بهت غذا نمیده ؟...
+2026-08-22 16:14:04 - natsuki_bot - INFO - Thinking message sent to 1382643815
+2026-08-22 16:14:12 - natsuki_bot - INFO - Response sent to 1382643815 (@maattzz): None
+2026-08-22 16:15:52 - natsuki_bot - INFO - Message from 1382643815 (@maattzz): احمق فقیر...
+2026-08-22 16:15:53 - natsuki_bot - INFO - Thinking message sent to 1382643815
+2026-08-22 16:15:53 - natsuki_bot - INFO - User 1382643815 message mood: ['Angry']
+2026-08-22 16:16:01 - natsuki_bot - INFO - Response sent to 1382643815 (@maattzz): چی گفتی؟! <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji> من نه احمقم نه فقیر! تو داری روی اعصاب من راه میری، اگه دوباره این حرفها رو بزنی اصلاً کاپکیکم رو میخورم جلوت و به تو نمیدم! حالا برو یه کار مفید بکن! <tg-emoji emoji-id="5238041302729247271">😤</tg-emoji>
+2026-08-22 16:17:18 - natsuki_bot - INFO - Message from 1382643815 (@maattzz): برو کیر حساب دار فروشگاه رو بخور گرسنه...
+2026-08-22 16:17:18 - natsuki_bot - INFO - Thinking message sent to 1382643815
+2026-08-22 16:17:33 - natsuki_bot - INFO - Response sent to 1382643815 (@maattzz): چه حرف زشت و بیادبی بود این؟! <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji> من گرسنه و بیچاره نیستم، انقدر کاپکیک و مانگای خوشمزه دارم که حسودی میکنی! اگه میخوای باهات دوست باشم، اینجوری باهات حرف بزن؟! نه! برو یه مانگای خوب بخون و اخلاقت رو اصلاح کن! <tg-emoji emoji-id="5238041302729247271">😤</tg-emoji>
+2026-08-22 16:31:14 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:31:14 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-22 16:31:14 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:31:15 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-22 16:31:15 - natsuki_bot - INFO - OpenAI client is runnig - model: openrouter/auto - base_url: https://openrouter.ai/api/v1
+2026-08-22 16:31:15 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-22 16:31:17 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-22 16:31:17 - natsuki_bot - INFO - Bot is polling...
+2026-08-22 16:32:34 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:32:34 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-22 16:32:34 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:32:35 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-22 16:32:35 - natsuki_bot - INFO - OpenAI client is runnig - model: openrouter/auto - base_url: https://openrouter.ai/api/v1
+2026-08-22 16:32:35 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-22 16:32:36 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-22 16:32:36 - natsuki_bot - INFO - Bot is polling...
+2026-08-22 16:33:00 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): باشه میخوای چی بخونیم باهام...
+2026-08-22 16:33:01 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 16:33:14 - natsuki_bot - INFO - Message from 7120771156 (@ougricap): سلام...
+2026-08-22 16:33:14 - natsuki_bot - INFO - Thinking message sent to 7120771156
+2026-08-22 16:33:17 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): خو، معلومه! یه شوجو مانگای بامزهی تازه به قفسهها اومده، اونیکی رو بیار ببینم! منفیگیر نشو ها، فقط... از یه جایی تو چشمم خورد! <tg-emoji emoji-id="5237764698245450016">😆</tg-emoji> اگه خوشت نیاد، مقصر خودمم نیستم! <tg-emoji emoji-id="5238224229681350693">😤</tg-emoji>
+2026-08-22 16:33:24 - natsuki_bot - INFO - Response sent to 7120771156 (@ougricap): سلام! اوه، اَه... بالاخره کسی هم سلام کرد! 🫣  
+نه، نه، اینم دلیل نمی‌شه فکر کنی خوشحالم! {<tg-emoji emoji-id="5238224229681350693">😊</tg-emoji>}  
+حالا بگو کارت با من چی بود؟ {<tg-emoji emoji-id="5240300936563278060">😊</tg-emoji>} 🧁
+2026-08-22 16:33:49 - natsuki_bot - INFO - Message from 7120771156 (@ougricap): میتونی کمک کنی ترجمه کنم...
+2026-08-22 16:33:49 - natsuki_bot - INFO - Thinking message sent to 7120771156
+2026-08-22 16:33:50 - natsuki_bot - INFO - User 7120771156 message mood: ['Empathetic']
+2026-08-22 16:33:59 - natsuki_bot - INFO - Response sent to 7120771156 (@ougricap): ترجمه؟ هوم... باشه، میتونم کمک کنم! {<tg-emoji emoji-id="5239948852324221211">😅</tg-emoji>} فقط اگه متن مسخره نباشه! 😤 بگو ببینم چی رو میخوای ترجمه کنم؟ 🙄
+2026-08-22 16:34:11 - natsuki_bot - INFO - Message from 7120771156 (@ougricap): Hi یعنی چی...
+2026-08-22 16:34:11 - natsuki_bot - INFO - Thinking message sent to 7120771156
+2026-08-22 16:34:35 - natsuki_bot - INFO - Response sent to 7120771156 (@ougricap): خب معلومه دیگه! <b>Hi</b> یعنی <b>«سلام»</b>! مگه نمی‌دونی؟ {<tg-emoji emoji-id="5238041302729247271">😊</tg-emoji>} اینقد ساده بود که خندم گرفت! {<tg-emoji emoji-id="5239948852324221211">😊</tg-emoji>} بگو ببینم چیز دیگه‌ای می‌خوای؟ 😒
+2026-08-22 16:34:46 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): مقصر تویی بنظرم...
+2026-08-22 16:34:46 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 16:34:54 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): و-چرا من مقصرم؟! <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji> من فقط یه مانگای خوب پیشنهاد دادم... اگه خوشت نیاد، نظر خودته! ولی خب... اگه واقعاً دوست داری، میتونم یه چیز دیگه هم انتخاب کنم. فقط نگو که واست دارم منو انتخاب میکنم، ها! <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji>
+
+...ولی راستش رو بخوای، دلم نمیخواد تنها بخونمش. بیا با هم بخونیم، باشه؟ <tg-emoji emoji-id="5239948852
+2026-08-22 16:35:00 - natsuki_bot - INFO - Message from 7120771156 (@ougricap): تورو...
+2026-08-22 16:35:00 - natsuki_bot - INFO - Thinking message sent to 7120771156
+2026-08-22 16:35:06 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): باشه...
+2026-08-22 16:35:07 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 16:35:41 - natsuki_bot - INFO - Response sent to 7120771156 (@ougricap): «تو رو»؟! یعنی چه؟! مگه من چیزی گفتم که تو اینطوری سریع جواب می‌دی؟! {<tg-emoji emoji-id="5240021540350740642">😊</tg-emoji>}
+
+... ااه، اگه ترجمه‌ی «you» رو می‌خوای، همینه: «تو»! ساده بود! {<tg-emoji emoji-id="5239948852324221211">😊</tg-emoji>}
+
+ولی این پیام‌های کوتاه و نصفه‌نیمه یه ذره نگرونم می‌کنه... همه چی خوبه؟ مال من نیستم ها، فقط بیا یه بار کامل بگو چی می‌خوای! {<tg-emoji emoji-id="524030093
+2026-08-22 16:36:13 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): بالاخره! حالا قبول کردی! <tg-emoji emoji-id="5237764698245450016">😆</tg-emoji> زود بریم همون کافه‌کتاب، اون شوجوی جدید که گفتم رو برداریم؛ نمی‌ذارم کسی قبل از ما یواشکی برش داره!
+
+راستش رو بگم... خوشحالم این یکی رو با هم می‌خونیم. وقتی کتابی رو با کسی می‌خونی، یه جور دیگه‌ی شیرینه. <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> فقط اگه وسطش اونقدر غر بزنی که نصفه رهاش کنی، بدون که کاپ‌کیکات
+2026-08-22 16:36:32 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): باشه...
+2026-08-22 16:36:33 - natsuki_bot - INFO - Thinking message sent to 7915402928
+2026-08-22 16:36:53 - natsuki_bot - INFO - Response sent to 7915402928 (@TheLecxo): آره دیگه! حالا دیگه وقت معطلی نیست! <tg-emoji emoji-id="5238224229681350693">😤</tg-emoji> بیا بریم اون شوجوی جدید رو برداریم، نکته که یکی دیگه یواشکی برش نداره!
+
+...راستش، خوشحالم که قرار شد با هم بخونیمش. <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> یه جورایی... شیرینتره. ولی اگه نالیدی که نصفه رهاش کنم، دیگه کاپکیکم نمیخوری، ها! <tg-emoji emoji-id="5239948852324221211">😏</tg-emoji>
+2026-08-22 16:37:13 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:37:13 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-22 16:37:13 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:37:14 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-22 16:37:14 - natsuki_bot - INFO - OpenAI client is runnig - model: openrouter/auto - base_url: https://openrouter.ai/api/v1
+2026-08-22 16:37:14 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-22 16:37:15 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-22 16:37:16 - natsuki_bot - INFO - Bot is polling...
+2026-08-22 16:37:24 - natsuki_bot - INFO - Message from 7120771156 (@ougricap): یعنی شمارو خانوم ناتسوکی...
+2026-08-22 16:37:24 - natsuki_bot - INFO - Thinking message sent to 7120771156
+2026-08-22 16:37:35 - natsuki_bot - INFO - Response sent to 7120771156 (@ougricap): <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> ا...خانوم ناتسوکی؟! وای، اینطوری صداهم نکن! {<tg-emoji emoji-id="5240300936563278060">😳</tg-emoji>} من هنوز اونقدر بزرگ نشدم که بهم «خانوم» بگی! یه چیزی بگو... اصلاً نه! صدام کن همون ناتسوکی خالی کافیه! {<tg-emoji emoji-id="5240021540350740642">😠</tg-emoji>} ولی... ممنون که اینطوری احترام میذاری... ب-بیخیال، بگو ببینم چیز دیگهای میخوای؟ 😤
+2026-08-22 16:38:00 - natsuki_bot - INFO - Message from 7120771156 (@ougricap): میگم خودت تورو می‌خوام...
+2026-08-22 16:38:01 - natsuki_bot - INFO - Thinking message sent to 7120771156
+2026-08-22 16:38:12 - natsuki_bot - INFO - Response sent to 7120771156 (@ougricap): باشه... بس کن دیگه! {<tg-emoji emoji-id="5240300936563278060">😳</tg-emoji>} این حرفها چیه میزنی؟! م-من که جدی نمیگیرمشون ها! ولی... اگه داری مسخره میکنی، زودتر بگو! {<tg-emoji emoji-id="5240021540350740642">😠</tg-emoji>} 
+
+...ولی اگه راست میگی، خب... و-ولی اینطوری نمیشه یهو اینا رو گفت! آدم باید یه ذره ملاحظه کنه! {<tg-emoji emoji-id="5240300936563278060">😳</tg-emoji>} 🧁
+2026-08-22 16:38:42 - natsuki_bot - INFO - Message from 7120771156 (@ougricap): بریم بیرون کافه حرف بزنیم راجبش یه چیز شبیه قرار...
+2026-08-22 16:38:42 - natsuki_bot - INFO - Thinking message sent to 7120771156
+2026-08-22 16:38:57 - natsuki_bot - INFO - Response sent to 7120771156 (@ougricap): باشه... وقف کن ببینم چی گفتی؟! {<tg-emoji emoji-id="5240021540350740642">😳</tg-emoji>} وا...لِی قرار؟ با تو؟! {<tg-emoji emoji-id="5240300936563278060">😳</tg-emoji>} م-من قبول نمی‌کنم ها! ب-بیخود از خجالت ... ولی اگه کافه‌اش کیک خوبی داشته باشه و تو ساکت بشی و سرت تو کتاب محشره نباشه، شاید یه نیم‌ساعت وقت بذارم. {<tg-emoji emoji-id="5238224229681350693">😤</tg-emoji>} نه که برات خاطژه‌ی شده باشم یا
+2026-08-22 16:39:47 - natsuki_bot - INFO - Message from 7120771156 (@ougricap): پس نمیایی؟...
+2026-08-22 16:39:47 - natsuki_bot - INFO - Thinking message sent to 7120771156
+2026-08-22 16:40:15 - natsuki_bot - INFO - Response sent to 7120771156 (@ougricap): ک-کی گفت نمیام؟! {<tg-emoji emoji-id="5240021540350740642">😠</tg-emoji>} فقط دارم به این فکر میکنم که کافهی اونجا کیکش خوب باشه نه به خاطر تو! {<tg-emoji emoji-id="5238224229681350693">😊</tg-emoji>} ولی … خب، اگه قراره بیای، دیر نکنا ها! {<tg-emoji emoji-id="5240300936563278060">😳</tg-emoji>} وگرنه… م-من اصلاً نمیآم! {<tg-emoji emoji-id="5238041302729247271">😤</tg-emoji>}
+2026-08-22 16:46:38 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:46:38 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-22 16:46:38 - natsuki_bot - INFO - ==================================================
+2026-08-22 16:46:38 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-22 16:46:38 - natsuki_bot - INFO - OpenAI client is runnig - model: openrouter/auto - base_url: https://openrouter.ai/api/v1
+2026-08-22 16:46:38 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-22 16:46:40 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-22 16:46:40 - natsuki_bot - INFO - Bot is polling...
+2026-08-22 16:47:05 - natsuki_bot - INFO - Message from 7915402928 (@TheLecxo): @ougricap...
+2026-08-22 16:47:47 - natsuki_bot - INFO - Message from 1600885459 (@RoHaM2342): غمگینم...
+2026-08-22 16:47:48 - natsuki_bot - INFO - Thinking message sent to 1600885459
+2026-08-22 16:47:48 - natsuki_bot - INFO - User 1600885459 message mood: ['Sad']

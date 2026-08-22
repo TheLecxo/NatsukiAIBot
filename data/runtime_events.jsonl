@@ -1,3 +1,2 @@
-{"time": "2026-08-21T13:11:08+03:30", "level": "INFO", "action": "bot_started", "detail": "Polling as @NatsukiAiBot"}
-{"time": "2026-08-21T13:21:32+03:30", "level": "INFO", "action": "control_action", "detail": "open_users requested by Lͥeͣcͫxo Varten (7915402928)"}
-{"time": "2026-08-21T13:22:23+03:30", "level": "INFO", "action": "shutdown_requested", "detail": "Complete shutdown requested from the main console"}
+{"time": "2026-08-22T16:46:40+03:30", "level": "INFO", "action": "bot_started", "detail": "Polling as @NatsukiAiBot"}
+{"time": "2026-08-22T16:46:53+03:30", "level": "INFO", "action": "control_action", "detail": "open_user_search requested by Lͥeͣcͫxo Varten (7915402928)"}

@@ -66,6 +66,7 @@ class MoodSystem:
         """تعیین خلق‌وخوی فعلی"""
         user_data = self.memory.get_user(user_id)
         level = user_data.get("friendship_level", "Novice")
+        xp = int(user_data.get("xp", 0) or 0)
         
         # وزن‌های خلق‌وخو بر اساس سطح
         mood_weights = {
@@ -81,10 +82,20 @@ class MoodSystem:
         }
         
         weights = mood_weights.get(level, mood_weights["Novice"])
-        moods = list(weights.keys())
-        probabilities = list(weights.values())
-        
-        chosen_mood = random.choices(moods, weights=probabilities, k=1)[0]
+        if xp >= 50:
+            weights = {
+                mood: weight
+                for mood, weight in weights.items()
+                if mood not in {"Shy", "Embarrassed", "Flustered"}
+            }
+
+        current_mood = user_data.get("current_mood")
+        if current_mood in weights and random.random() < 0.75:
+            chosen_mood = current_mood
+        else:
+            moods = list(weights.keys())
+            probabilities = list(weights.values())
+            chosen_mood = random.choices(moods, weights=probabilities, k=1)[0]
         
         # به‌روزرسانی حالت فعلی
         user_data["current_mood"] = chosen_mood

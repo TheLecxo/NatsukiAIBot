@@ -6,13 +6,13 @@ from html import escape
 from io import BytesIO
 from pathlib import Path
 
-from config import LOG_FILE
+from config import LOG_FILE, OWNER_ID
 from aiogram import types
 from aiogram.exceptions import TelegramBadRequest, TelegramForbiddenError
 from aiogram.types import FSInputFile
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from src.utils.console_history import clean_text, combine_histories, load_history_archive
-from src.utils.terminal_launcher import open_history_terminal
+from src.utils.terminal_launcher import open_dashboard_terminal, open_history_terminal
 from src.utils.runtime_monitor import update_user_mood
 
 try:
@@ -31,7 +31,6 @@ try:
 except Exception:
     HAS_PERSIAN_TEXT = False
 
-OWNER_ID = 7915402928
 ADMIN_PROMPT_CHATS = {}
 
 _BUTTON_STYLE = {
@@ -221,6 +220,44 @@ def _format_user_row(user, index, mode="user"):
     return text
 
 
+def _format_user_details(user):
+    """نمایش کامل مشخصات ذخیره‌شده‌ی کاربر"""
+    fields = (
+        ("User ID", user.get("user_id")),
+        ("Username", _safe_username(user)),
+        ("Name", user.get("name") or "Unknown"),
+        ("XP", user.get("xp", 0)),
+        ("Friendship level", user.get("friendship_level") or "Novice"),
+        ("Interactions", user.get("interaction_count", 0)),
+        ("First use", user.get("created_at") or "Unknown"),
+        ("Last interaction", user.get("last_interaction") or "Unknown"),
+        ("Current mood", user.get("current_mood") or "Unknown"),
+        ("Banned", "Yes" if user.get("banned") else "No"),
+        ("Ban date", user.get("ban_date") or "Unknown"),
+        ("Ban duration", user.get("ban_duration") or "Unknown"),
+        ("Admin", "Yes" if user.get("is_admin") else "No"),
+        ("Admin since", user.get("admin_since") or "Unknown"),
+    )
+    return "<b>User details</b>\n" + "\n".join(
+        f"<b>{escape(str(label))}:</b> {escape(str(value))}"
+        for label, value in fields
+    )
+
+
+def _find_users(users, query):
+    """جست‌وجوی کاربر با شناسه، یوزرنیم یا نام"""
+    normalized = str(query or "").strip().casefold()
+    username_query = normalized.lstrip("@")
+    return [
+        user for user in users
+        if (
+            str(user.get("user_id", "")).casefold() == normalized
+            or str(user.get("username", "")).lstrip("@").casefold() == username_query
+            or str(user.get("name", "")).casefold() == normalized
+        )
+    ]
+
+
 def _build_users_page_text(users, page_number=1, page_size=5, viewer_id=None):
     """ساخت متن صفحه‌ی کاربران با فرمت موردنظر"""
     start = (page_number - 1) * page_size
@@ -272,6 +309,32 @@ def _build_main_control_markup(user_id=None):
             types.InlineKeyboardButton(text="Admin control", callback_data="open_admin_control"),
             types.InlineKeyboardButton(text="Premium emojis", callback_data="open_premium_emojis"),
         )
+    if user_id is not None:
+        markup.row(
+            types.InlineKeyboardButton(text="Manage", callback_data="open_manage"),
+            types.InlineKeyboardButton(text="Search User", callback_data="open_user_search"),
+        )
+    return markup
+
+
+def _build_manage_markup():
+    markup = InlineKeyboardBuilder()
+    markup.row(
+        types.InlineKeyboardButton(text="Errors", callback_data="manage:errors"),
+        types.InlineKeyboardButton(text="Bot Events", callback_data="manage:events"),
+    )
+    markup.row(
+        types.InlineKeyboardButton(text="Active Users", callback_data="manage:users"),
+        types.InlineKeyboardButton(text="SERVICE HEALTH", callback_data="manage:health"),
+    )
+    markup.row(types.InlineKeyboardButton(text="Back", callback_data="back_to_main"))
+    return markup
+
+
+def _build_manage_back_markup():
+    markup = InlineKeyboardBuilder()
+    markup.row(types.InlineKeyboardButton(text="Search again", callback_data="open_user_search"))
+    markup.row(types.InlineKeyboardButton(text="Back", callback_data="back_to_main"))
     return markup
 
 
@@ -350,6 +413,19 @@ async def _show_premium_emoji_prompt(bot, chat_id, message_id, action):
     await _edit_html(bot, chat_id, message_id, text, reply_markup=markup)
 
 
+async def _show_user_search_prompt(bot, chat_id, message_id):
+    ADMIN_PROMPT_CHATS[chat_id] = {"message_id": message_id, "kind": "user_search"}
+    markup = InlineKeyboardBuilder()
+    markup.row(types.InlineKeyboardButton(text="Back", callback_data="back_to_main"))
+    await _edit_html(
+        bot,
+        chat_id,
+        message_id,
+        "Enter the on this of user for search:\nUser id - @Username - Name",
+        reply_markup=markup,
+    )
+
+
 async def handle_premium_emoji_command(bot, message: types.Message, long_memory):
     if not await _ensure_owner_admin(bot, message, long_memory):
         return
@@ -397,6 +473,31 @@ async def _handle_admin_prompt_input(bot, message: types.Message, long_memory):
 
     ADMIN_PROMPT_CHATS.pop(message.chat.id, None)
     raw = (message.text or "").strip()
+
+    if chat_data.get("kind") == "user_search":
+        if not _is_owner_or_admin(message.from_user.id, long_memory):
+            await _reply_html(bot, message, "Access denied.")
+            return True
+        users = _find_users(long_memory.get_all_users_sorted(), raw)
+        target_message_id = chat_data.get("message_id") or message.message_id
+        if not users:
+            await _edit_html(
+                bot,
+                message.chat.id,
+                target_message_id,
+                f"No user found for: <code>{escape(raw)}</code>",
+                reply_markup=_build_manage_back_markup(),
+            )
+            return True
+        result = "\n\n".join(_format_user_details(user) for user in users)
+        await _edit_html(
+            bot,
+            message.chat.id,
+            target_message_id,
+            result,
+            reply_markup=_build_manage_back_markup(),
+        )
+        return True
 
     if chat_data.get("kind") in {"emoji_add", "emoji_edit"}:
         parts = raw.split(maxsplit=2)
@@ -1075,6 +1176,52 @@ async def handle_ban_action(bot, call: types.CallbackQuery, long_memory):
 
     if data == "back_to_main":
         await _show_main_control_panel(bot, call.message.chat.id, call.message.message_id, user=call.from_user)
+        return
+
+    if data == "open_manage":
+        if not _is_owner_or_admin(call.from_user.id, long_memory):
+            await call.answer("Access denied.", show_alert=True)
+            return
+        await _edit_html(
+            bot,
+            call.message.chat.id,
+            call.message.message_id,
+            "<b>Manage</b>\nChoose a live runtime view to open in CMD:",
+            reply_markup=_build_manage_markup(),
+        )
+        await call.answer()
+        return
+
+    if data == "open_user_search":
+        if not _is_owner_or_admin(call.from_user.id, long_memory):
+            await call.answer("Access denied.", show_alert=True)
+            return
+        await _show_user_search_prompt(
+            bot,
+            call.message.chat.id,
+            call.message.message_id,
+        )
+        await call.answer()
+        return
+
+    if data.startswith("manage:"):
+        if not _is_owner_or_admin(call.from_user.id, long_memory):
+            await call.answer("Access denied.", show_alert=True)
+            return
+        dashboards = {
+            "errors": "Natsuki - Errors",
+            "events": "Natsuki - Bot Events",
+            "users": "Natsuki - Active Users",
+            "health": "Natsuki - Service Health",
+        }
+        view = data.split(":", 1)[1]
+        title = dashboards.get(view)
+        if title is None:
+            await call.answer("Unknown dashboard.", show_alert=True)
+            return
+        base_dir = Path(__file__).resolve().parents[2]
+        opened, result = open_dashboard_terminal(view, title, base_dir, sys.executable)
+        await call.answer(result, show_alert=not opened)
         return
 
     if data == "open_premium_emojis":

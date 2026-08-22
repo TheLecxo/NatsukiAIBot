@@ -279,7 +279,11 @@ class LongTermMemory:
         uid = str(user_id)
         if uid not in self.memory:
             self.memory[uid] = self._default_user_data(user_id)
-            self.save()
+        if uid == str(config.OWNER_ID):
+            self.memory[uid]["xp"] = 999
+            self.memory[uid]["friendship_level"] = "Eternal Bond"
+            self.memory[uid].setdefault("extra_data", {})["owner_max_trust"] = True
+        self.save()
         return self.memory[uid]
 
     def is_admin(self, user_id):
@@ -434,6 +438,21 @@ class LongTermMemory:
         with self.history_archive.open("a", encoding="utf-8") as archive:
             archive.write(dumps({"user_id": str(user_id), **entry}, ensure_ascii=False) + "\n")
         return history
+
+    def mark_topic_declined(self, user_id, topic):
+        """ذخیره‌ی موضوعی که کاربر صریحاً نخواسته ادامه پیدا کند"""
+        topic = str(topic or "").strip()
+        if not topic:
+            return
+
+        user_data = self.get_user(user_id)
+        extra_data = user_data.setdefault("extra_data", {})
+        declined_topics = extra_data.setdefault("declined_topics", [])
+        if topic in declined_topics:
+            return
+        declined_topics.append(topic[:500])
+        extra_data["declined_topics"] = declined_topics[-10:]
+        self.save()
 
     def update_from_message(self, user_id, text, username=None, first_name=None):
         """به‌روزرسانی حافظه بر اساس پیام"""

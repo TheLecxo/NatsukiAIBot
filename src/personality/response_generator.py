@@ -99,6 +99,25 @@ class ResponseGenerator:
         
         prompt += self._premium_emoji_prompt()
 
+        if xp >= 50:
+            declined_topics = (user_data.get("extra_data") or {}).get("declined_topics", [])
+            if is_english:
+                prompt += " Friendship is secure: do not act shy, embarrassed, or flustered, and do not use pauses or hesitation to hide affection. Speak naturally and directly."
+                prompt += " Do not revive an older topic or keep asking about it when the user has moved on. Respect a clear refusal to continue; only discuss a declined topic again if the user brings it up explicitly."
+                if declined_topics:
+                    prompt += " Topics the user declined to continue (do not mention them unless explicitly reopened): " + " | ".join(declined_topics)
+            else:
+                prompt += " این رابطه از سطح ۵۰ به بالا صمیمی و امن است؛ خجالتی، شرمنده یا دستپاچه نباش و برای پنهان‌کردن محبت مکث و تردید نکن. طبیعی و مستقیم حرف بزن."
+                prompt += " وقتی کاربر از موضوعی عبور کرد یا صریحاً گفت ادامه نمی‌دهد، آن موضوع را دوباره پیش نکش و درباره‌اش پیگیری نکن؛ فقط اگر خودش دوباره مطرح کرد به آن برگرد."
+                if declined_topics:
+                    prompt += " موضوعاتی که کاربر ادامه‌دادنشان را نخواسته است (تا وقتی خودش باز نکرده مطرح نکن): " + " | ".join(declined_topics)
+
+        if xp >= 999:
+            if is_english:
+                prompt += " This is complete trust with the owner. Shyness has no place here; be emotionally steady, candid, warm, and fully comfortable."
+            else:
+                prompt += " این رابطه با اونر در سطح اعتماد کامل است؛ خجالت در این موضوع بی‌معنی است. احساساتت پایدار، صادقانه، گرم و کاملاً راحت باشد."
+
         # ویژگی سطح Tsundere
         if level in {"Tsundere", "Confidant", "Devoted Friend", "Soulmate", "Eternal Bond"}:
             if is_english:
