@@ -1,7 +1,37 @@
 {
   "started_at": "2026-08-22T17:06:14+03:30",
-  "bot_state": "starting",
-  "api_traffic": 0,
-  "users": {},
-  "last_event": null
+  "bot_state": "running",
+  "api_traffic": 2,
+  "users": {
+    "6725954365": {
+      "number": 1,
+      "name": "Ali Soltani",
+      "username": "unknown",
+      "user_id": "6725954365",
+      "start_chat_time": "2026-08-22T17:06:19+03:30",
+      "usage_count": 2,
+      "last_activity": "2026-08-22T17:08:02+03:30",
+      "last_activity_type": "message",
+      "current_mood": "Defensive",
+      "mood_updated_at": "2026-08-22T17:08:04+03:30"
+    },
+    "7915402928": {
+      "number": 2,
+      "name": "Lͥeͣcͫxo Varten",
+      "username": "TheLecxo",
+      "user_id": "7915402928",
+      "start_chat_time": "2026-08-22T17:06:38+03:30",
+      "usage_count": 1,
+      "last_activity": "2026-08-22T17:06:38+03:30",
+      "last_activity_type": "command"
+    }
+  },
+  "last_event": {
+    "time": "2026-08-22T17:06:18+03:30",
+    "level": "INFO",
+    "action": "bot_started",
+    "detail": "Polling as @NatsukiAiBot"
+  },
+  "state_detail": "Polling as @NatsukiAiBot",
+  "updated_at": "2026-08-22T17:08:04+03:30"
 }

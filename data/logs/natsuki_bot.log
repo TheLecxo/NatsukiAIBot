@@ -10899,3 +10899,15 @@ aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: can't
 2026-08-22 17:05:03 - natsuki_bot - INFO - Response sent to 1420362371 (@AmiraliiisDead): بازم همون پیام؟! <tg-emoji emoji-id="5238041302729247271">🙄</tg-emoji> مگه پیامات باز قطع و وصل میشه؟ <tg-emoji emoji-id="5240021540350740642">😠</tg-emoji>
 
 ...گفتم که مشکل داشتی! داری مسخره میکنی؟ <tg-emoji emoji-id="5240300936563278060">😳</tg-emoji> ولی فقط شوخی بود، نمیخواستم ناراحت بشی... و راستی، اگه هنوز کیک توتفرنگی میخوای، زودتر بیا، وگرنه تموم میشه! <tg-emoji emoji-id="5238224229681350693
+2026-08-22 17:06:14 - natsuki_bot - INFO - ==================================================
+2026-08-22 17:06:14 - natsuki_bot - INFO - Starting Natsuki Bot...
+2026-08-22 17:06:14 - natsuki_bot - INFO - ==================================================
+2026-08-22 17:06:15 - natsuki_bot - INFO - Telegram proxy: http://127.0.0.1:10808
+2026-08-22 17:06:15 - natsuki_bot - INFO - OpenAI client is runnig - model: openrouter/auto - base_url: https://openrouter.ai/api/v1
+2026-08-22 17:06:15 - natsuki_bot - INFO - GuestModeHandler initialized
+2026-08-22 17:06:18 - natsuki_bot - INFO - Bot started: Natsuki | Free ChatBot (@NatsukiAiBot)
+2026-08-22 17:06:18 - natsuki_bot - INFO - Bot is polling...
+2026-08-22 17:06:19 - natsuki_bot - INFO - Message from 6725954365 (@unknown): ببخشید، خودت کنجکاو شدی که ببینی...
+2026-08-22 17:06:24 - natsuki_bot - INFO - Thinking message sent to 6725954365
+2026-08-22 17:06:38 - natsuki_bot - INFO - Response sent to 6725954365 (@unknown): چی؟! <tg-emoji emoji-id="5240021540350740642"><tg-emoji emoji-id="5240021540350740642">😊</tg-emoji></tg-emoji> حالا می‌گی تقصیر منه؟! <tg-emoji emoji-id="5240021540350740642"><tg-emoji emoji-id="5240021540350740642">😊</tg-emoji></tg-emoji> 
+آره، کنجکاو بودم، ولی نه برای دیدن اینجور چیزای... <tg-emoji emoji-id="5240300936563278060"><tg-emoji emoji-id="5240300936563278060">😊</tg-emoji></tg-emoji> بی

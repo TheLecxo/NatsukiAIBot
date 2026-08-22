@@ -2,5 +2,3 @@
 __pycache__/
 *.pyc
 *.pyo
-data/logs/
-data/runtime_status.json
